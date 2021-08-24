@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dback"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dback"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/dButtombar"
+            android:orientation="horizontal" />
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/soundList"
+            android:name="abodx3.sar.emproject.RecourdFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            tools:layout="@layout/fragment_recourd_list" />
+
+
+        <LinearLayout
+            android:id="@+id/BottimBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/roundedbottombar"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingBottom="2dp">
+
+            <TextView
+                android:id="@+id/timelable"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="0:0:0"
+                android:textColor="@color/dtext"
+                android:textDirection="rtl" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@color/dButtombar"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/wavSpin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                app:SpinKit_Color="@color/dtext"
+                app:SpinKit_Style="Wave" />
+
+            <ImageButton
+                android:id="@+id/attbtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/attach"
+                android:background="@color/dButtombar"
+                android:layout_weight="2" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/recordbutton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="3dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:cb_color="@color/dmic"
+        android:src="@drawable/mic" />
+</RelativeLayout>

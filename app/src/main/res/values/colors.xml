@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="dButtombar">#17212B</color>
+    <color name="dtext">#6D7883</color>
+    <color name="dback">#0E1621</color>
+    <color name="dmic">#5288C1</color>
+    <color name="dbtnplay">#4C9CE2</color>
+    <color name="dbackitem">#2B5278</color>
+</resources>
