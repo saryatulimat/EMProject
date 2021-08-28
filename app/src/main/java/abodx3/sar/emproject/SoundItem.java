@@ -2,11 +2,13 @@ package abodx3.sar.emproject;
 
 
 import android.content.Context;
+
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.frolo.waveformseekbar.WaveformSeekBar;
@@ -29,7 +31,6 @@ import okhttp3.Response;
 
 public class SoundItem extends RecyclerView.ViewHolder implements View.OnClickListener, Callback, WaveformSeekBar.OnSeekBarChangeListener, Player.Listener {
 
-
     public final View view;
     WaveformSeekBar waveBar;
     CircleButton playbtn;
@@ -39,7 +40,6 @@ public class SoundItem extends RecyclerView.ViewHolder implements View.OnClickLi
     Runnable runnable;
     Handler h = new Handler();
     int x;
-
     public SoundItem(View view) {
         super(view);
         this.view = view;
@@ -49,22 +49,24 @@ public class SoundItem extends RecyclerView.ViewHolder implements View.OnClickLi
     }
 
     public void refreshEM() {
+
         if (recourd != null && (recourd.emotion == null || recourd.emotion.equals(""))) {
             UplaodWav predector = new UplaodWav();
-            predector.inituploadFile("http://192.168.1.7", new File(recourd.getFullPath()));
+            predector.inituploadFile("http://192.168.1.7:8080", new File(recourd.getFullPath()));
             predector.exec(this);
         }
     }
 
     public void setRecourd(Recourd recourd) {
         this.recourd = recourd;
-        refreshEM();
-        if (recourd.emotion != null)
-            textView.setText(recourd.emotion);
         waveBar.setWaveform(new AmplitudExtractor().getAmplituds(view.getContext(), recourd.getFullPath()));
         playbtn.setOnClickListener(this);
         waveBar.setOnSeekBarChangeListener(this);
 
+        if (recourd.emotion != null && !recourd.emotion.equals(""))
+            textView.setText(recourd.emotion);
+        else
+            refreshEM();
     }
 
     void initPlayer() {
@@ -88,6 +90,7 @@ public class SoundItem extends RecyclerView.ViewHolder implements View.OnClickLi
 
     @Override
     public void onResponse(final Call call, final Response response) throws IOException {
+
         if (response.isSuccessful()) {
             recourd.emotion = response.body().string();
             textView.setText(recourd.emotion);
@@ -171,12 +174,22 @@ public class SoundItem extends RecyclerView.ViewHolder implements View.OnClickLi
     //region implements Player.Listener
     @Override
     public void onIsPlayingChanged(boolean isPlaying) {
+        String src = "";
+        int NightMode = AppCompatDelegate.getDefaultNightMode();
+        if (AppCompatDelegate.MODE_NIGHT_YES == NightMode) {
+            src = "@drawable/paush";
+            if (!isPlaying) {
+                src = "@drawable/play";
+            } else
+                playHandler();
+        } else {
+            src = "@drawable/lipaush";
+            if (!isPlaying) {
+                src = "@drawable/liplay";
+            } else
+                playHandler();
+        }
 
-        String src = "@drawable/paush";
-        if (!isPlaying) {
-            src = "@drawable/play";
-        } else
-            playHandler();
         int imageres = view.getContext().getResources().getIdentifier(src, null, view.getContext().getPackageName());
         playbtn.setImageDrawable(view.getContext().getResources().getDrawable(imageres));
     }

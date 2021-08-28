@@ -38,26 +38,4 @@ public class MyRecourdRecyclerViewAdapter extends RecyclerView.Adapter<SoundItem
     }
 
 
-    //region s
-     /*
-    public class ViewHolder extends RecyclerView.ViewHolder {
-       //public final View mView;
-      //  public final TextView mIdView;
-        //public final TextView mContentView;
-      //  public DummyItem mItem;
-
-        public ViewHolder(View view) {
-          //  super(view);
-            //mView = view;
-            //mIdView = (TextView) view.findViewById(R.id.item_number);
-            //mContentView = (TextView) view.findViewById(R.id.content);
-        }
-
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
-        }
-    }
-    */
-    //endregion s
 }

@@ -6,7 +6,7 @@
     android:layout_marginTop="9dp"
     android:layout_marginBottom="9dp"
     android:layoutDirection="ltr"
-    android:background="@drawable/mssegrouncolor"
+    style="@style/messeg"
     android:orientation="horizontal">
 
     <at.markushi.ui.CircleButton
@@ -15,8 +15,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_weight="2"
-        app:cb_color="@color/dmic"
-        android:src="@drawable/play" />
+        style="@style/ply" />
 
     <com.frolo.waveformseekbar.WaveformSeekBar
         android:id="@+id/progressbar"
@@ -27,7 +26,7 @@
         android:paddingTop="13dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-
+        style="@style/seekbar"
         />
 
     <TextView
@@ -36,9 +35,11 @@
         android:textAlignment="center"
         android:gravity="center"
         android:layout_height="match_parent"
-        android:textColor="@color/dtext"
+        style="@style/textview"
         android:layout_weight="3"
         android:textSize="15sp"
         android:text="مشاعرك" />
+
+
 </LinearLayout>
 

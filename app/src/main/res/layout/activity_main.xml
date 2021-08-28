@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dback"
+    style="@style/Theme.EMProject"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dback"
+        style="@style/backstyle"
         android:orientation="vertical">
 
         <LinearLayout
@@ -18,11 +18,23 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/dButtombar"
-            android:orientation="horizontal" />
+            style="@style/topbarstyle"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/theem"
+                style="@style/como"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="5dp"
+                android:text="Dark mode"
+                android:textSize="15sp" />
+        </LinearLayout>
 
 
         <androidx.fragment.app.FragmentContainerView
+
             android:id="@+id/soundList"
             android:name="abodx3.sar.emproject.RecourdFragment"
             android:layout_width="match_parent"
@@ -38,8 +50,9 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="3dp"
+            style="@style/buttombarstyle"
             android:layout_weight="1"
-            android:background="@drawable/roundedbottombar"
+            android:layout_marginTop="5dp"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:paddingLeft="3dp"
@@ -53,14 +66,13 @@
                 android:layout_weight="5"
                 android:gravity="center"
                 android:text="0:0:0"
-                android:textColor="@color/dtext"
+                style="@style/textview"
                 android:textDirection="rtl" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:background="@color/dButtombar"
                 android:orientation="horizontal">
 
             </LinearLayout>
@@ -71,7 +83,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center"
-                app:SpinKit_Color="@color/dtext"
+                style="@style/SpinKitView"
                 app:SpinKit_Style="Wave" />
 
             <ImageButton
@@ -79,8 +91,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/attach"
-                android:background="@color/dButtombar"
+                style="@style/attach"
                 android:layout_weight="2" />
 
 
@@ -94,6 +105,5 @@
         android:layout_marginBottom="3dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        app:cb_color="@color/dmic"
-        android:src="@drawable/mic" />
+        style="@style/mic" />
 </RelativeLayout>

@@ -2,15 +2,67 @@
     <!-- Base application theme. -->
     <style name="Theme.EMProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/white</item>
+
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="mic" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cb_color">@color/lmic</item>
+        <item name="android:src">@drawable/limic</item>
+    </style>
+
+    <style name="ply" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:src">@drawable/liplay</item>
+        <item name="cb_color">@color/lbtnplay</item>
+    </style>
+
+    <style name="topbarstyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:background">@color/lButtombar</item>
+    </style>
+
+    <style name="buttombarstyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:background">@drawable/liroundedbottombar</item>
+    </style>
+
+    <style name="messeg" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:background">@drawable/limssegrouncolor</item>
+    </style>
+
+    <style name="backstyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:background">@color/lback</item>
+    </style>
+
+    <style name="attach" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:background">@color/lbackitem</item>
+        <item name="android:src">@drawable/attach</item>
+    </style>
+
+    <style name="textview" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SpinKitView" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="SpinKit_Color">@color/white</item>
+    </style>
+
+    <style name="como" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:thumbTint">@color/lbackitem</item>
+        <item name="android:trackTint">@color/lbackitem</item>
+        <item name="android:shadowColor">@color/lbackitem</item>
+    </style>
+
+    <style name="seekbar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="waveProgressColor">@color/white</item>
     </style>
 </resources>

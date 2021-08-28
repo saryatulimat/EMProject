@@ -2,12 +2,15 @@ package abodx3.sar.emproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -16,7 +19,10 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,11 +72,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     AudioRecourder recourder;
     RecourdFragment fragment;
     ImageButton attachbtn;
+    Switch them;
+    boolean x = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         requestAllPermission();
         initViews();
     }
@@ -84,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case 15:
@@ -102,7 +110,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     void initViews() {
 
+        them = (Switch) findViewById(R.id.theem);
+        them.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                else
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+            }
+        });
         timeLable = (TextView) findViewById(R.id.timelable);
         RecordButton = (CircleButton) findViewById(R.id.recordbutton);
         waveSpin = (SpinKitView) findViewById(R.id.wavSpin);

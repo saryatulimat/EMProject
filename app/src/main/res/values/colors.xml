@@ -8,10 +8,20 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#0000FF</color>
+
+
     <color name="dButtombar">#17212B</color>
     <color name="dtext">#6D7883</color>
     <color name="dback">#0E1621</color>
     <color name="dmic">#5288C1</color>
     <color name="dbtnplay">#4C9CE2</color>
     <color name="dbackitem">#2B5278</color>
+
+    <color name="lButtombar">#FFFFFFFF</color>
+    <color name="ltext">#FFFFFFFF</color>
+    <color name="lback">#FFFFFFFF</color>
+    <color name="lmic">#FFFFFFFF</color>
+    <color name="lbtnplay">#FFFFFFFF</color>
+    <color name="lbackitem">#a790c5</color>
+
 </resources>

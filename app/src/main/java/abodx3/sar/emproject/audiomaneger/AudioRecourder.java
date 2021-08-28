@@ -21,7 +21,7 @@ import omrecorder.Recorder;
 
 public class AudioRecourder {
 
-    final int TIMER_DELAY = 100;
+    final long TIMER_DELAY = 100;
     final public String FOLDER_PATH = Environment.getExternalStorageDirectory() + File.separator + "EMSound";
 
     //region interfaces
@@ -113,7 +113,7 @@ public class AudioRecourder {
             String getTiemString() {
                 x += TIMER_DELAY;
                 long time = x;
-                long ms = time % 1000;
+                long ms = (time % 1000);
                 ms /= 10;
                 time /= 1000;
                 long s = time % 60;
@@ -132,7 +132,7 @@ public class AudioRecourder {
             }
         };
         reco = true;
-        handler.postDelayed(runnable, TIMER_DELAY);
+        handler.postDelayed(runnable, TIMER_DELAY + 10);
         audioRecord.startRecording();
     }
 
